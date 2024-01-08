@@ -1,0 +1,23 @@
+@use "sizes";
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  //   font-family: Arial, Helvetica, sans-serif;
+  color: □hsl(0, 0%, 11%);
+}
+
+header {
+    margin: sizes.$spacing-3x4 sizes.$spacing-3x3
+}
