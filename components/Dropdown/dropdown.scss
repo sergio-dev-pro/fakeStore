@@ -1,0 +1,41 @@
+@use "../../styles/sizes";
+@use "../../styles/colors";
+@use "../../styles/breakpoints";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__target {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: colors.$primary-color;
+  border: 1.5px solid colors.$primary-color;
+  font-size: small;
+  font-weight: 600;
+  padding: sizes.$spacing-3x3;
+  border-radius: 3px;
+  @include breakpoints.min(large) {
+    font-size: medium;
+  }
+  @include breakpoints.min(x-large) {
+    font-size: large;
+  }
+}
+
+.dropdown__content {
+  position: absolute;
+  background-color: #f9f9f9;
+  // min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: sizes.$spacing-3x2;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.dropdown__target__icon {
+  color: colors.$primary-color;
+  margin-left: sizes.$spacing-3x3;
+}
