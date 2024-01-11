@@ -1,0 +1,28 @@
+@use "@/styles/sizes";
+@use "@/styles/colors";
+@use "@/styles/breakpoints";
+
+.button {
+  padding: sizes.$spacing-3x3;
+  background-color: white;
+  border: 1.5px solid colors.$primary-color;
+  border-radius: 3px;
+  font-size: small;
+  font-weight: 600;
+  @include breakpoints.min(large) {
+    font-size: medium;
+  }
+  @include breakpoints.min(x-large) {
+    font-size: large;
+  }
+}
+
+.button--primary {
+  background-color: colors.$primary-color;
+  color: white;
+}
+
+.button--secondary {
+  background-color: white;
+  color: colors.$primary-color;
+}
