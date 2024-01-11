@@ -2,15 +2,18 @@
 @use "@/styles/sizes";
 
 header {
-  margin: sizes.$spacing-3x4 sizes.$spacing-3x3;
+  padding: sizes.$spacing-3x4 sizes.$spacing-3x3;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 2000px;
 
   @include breakpoints.min(medium) {
-    margin: sizes.$spacing-3x6 sizes.$spacing-3x7;
+    padding: sizes.$spacing-3x6 sizes.$spacing-3x7;
   }
   @include breakpoints.min(x-large) {
-    margin: sizes.$spacing-3x8 sizes.$spacing-3x10;
+    padding: sizes.$spacing-3x8 sizes.$spacing-3x10;
+    margin: 0 auto;
   }
 }
 

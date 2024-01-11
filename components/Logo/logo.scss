@@ -1,4 +1,4 @@
-@use '@/styles/breakpoints';
+@use "@/styles/breakpoints";
 
 @mixin sizes($size) {
   width: $size;
@@ -6,11 +6,15 @@
 }
 .logo {
   position: relative;
-  @include sizes(35px);
-  @include breakpoints.min(medium) {
-    @include sizes(45px);
-  }
-  @include breakpoints.min(x-large) {
-    @include sizes(55px);
-  }
+  // base 55px a cada 667px de altura
+  @include sizes(8.25vh);
+  // @include breakpoints.min(medium) {
+  //   @include sizes(60px);
+  // }
+  // @include breakpoints.min(x-large) {
+  //   @include sizes(70px);
+  // }
+  // @include breakpoints.min(x-large) {
+  //   @include sizes(80px);
+  // }
 }

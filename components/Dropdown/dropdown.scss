@@ -13,16 +13,21 @@
   align-items: center;
   color: colors.$primary-color;
   border: 1.5px solid colors.$primary-color;
-  font-size: small;
+  // base 11px a cada 740px de altura
+  padding: 1.5vh;
+  // base 21px a cada 740px de altura
+  font-size: 2.85vh;
   font-weight: 600;
-  padding: sizes.$spacing-3x3;
   border-radius: 3px;
-  @include breakpoints.min(large) {
-    font-size: medium;
-  }
-  @include breakpoints.min(x-large) {
-    font-size: large;
-  }
+  // @include breakpoints.min(large) {
+  //   // font-size: sizes.$spacing-3x7;
+  //   border: 2px solid colors.$primary-color;
+  //   padding: sizes.$spacing-3x4;
+  // }
+  // @include breakpoints.min(x-large) {
+  //   // font-size: sizes.$spacing-3x9;
+  //   padding: sizes.$spacing-3x5;
+  // }
 }
 
 .dropdown__content {

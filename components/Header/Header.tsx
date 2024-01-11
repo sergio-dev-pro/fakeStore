@@ -8,6 +8,7 @@ import { Link } from "../Link";
 type Props = {};
 
 export const Header = (props: Props) => {
+  console.log(screen.width, screen.height);
   return (
     <header>
       <Logo />
