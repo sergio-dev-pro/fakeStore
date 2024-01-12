@@ -1,25 +1,16 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import '@/styles/globals.scss'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Fake store',
-  description: '',
-}
+import { Logo } from "@/components/Logo";
+import "@/styles/globals.scss";
+import "./layout.scss";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="pt">
-      <body className={inter.className}>
-        <header>account header</header>
-        <main>{children}</main>
-      </body>
-    </html>
-  )
+    <main>
+      <Logo />
+      <div className="form-wrapper">{children}</div>
+    </main>
+  );
 }

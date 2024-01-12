@@ -5,9 +5,11 @@ import { Logo } from "../Logo";
 import "./header.scss";
 import { Button } from "../Button";
 import { Link } from "../Link";
+import { useRouter } from "next/navigation";
 type Props = {};
 
 export const Header = (props: Props) => {
+  const router = useRouter();
   return (
     <header>
       <Logo />
