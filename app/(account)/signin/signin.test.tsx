@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Login, {
+import Login from "./page";
+import {
   BUTTON_LABEL,
   NAME_ERROR_MSG,
   NAME_INPUT_LABEL,
@@ -7,7 +8,7 @@ import Login, {
   PASSWORD_INPUT_LABEL,
   VALID_NAME,
   VALID_PASSWORD,
-} from "./page";
+} from "./consts";
 
 describe("Test Signin page", () => {
   test("name input", () => {
