@@ -1,0 +1,24 @@
+@use "@/styles/colors";
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 2.2vh;
+  color: colors.$primary-color;
+  font-weight: 600;
+}
+
+input {
+  border: 1.8px dashed colors.$primary-color;
+  border-radius: 3px;
+  padding: 1vh;
+  outline: none;
+  margin-bottom: 1.5vh
+}
+
+input:focus {
+  border-style: solid;
+}
