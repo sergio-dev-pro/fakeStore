@@ -1,24 +1,33 @@
 @use "@/styles/colors";
 
-div {
+.input-wrapper {
   display: flex;
   flex-direction: column;
-}
-
-label {
-  font-size: 2.2vh;
-  color: colors.$primary-color;
-  font-weight: 600;
-}
-
-input {
-  border: 1.8px dashed colors.$primary-color;
-  border-radius: 3px;
-  padding: 1vh;
-  outline: none;
   margin-bottom: 1.5vh
 }
 
-input:focus {
+.input-wrapper__label {
+  font-size: 2.7vh;
+  color: colors.$primary-color;
+  font-weight: 700;
+  margin-bottom: 3px
+}
+
+.input-wrapper__input {
+  border: 1.8px dashed colors.$primary-color;
+  border-radius: 3px;
+  padding: 1.5vh;
+  outline: none;
+  font-size: 2.3vh;
+  font-weight: 700;
+}
+.input-wrapper__span {
+  padding-top: 2px;
+  font-size: 2.15vh;
+  color: #8c2424;
+  font-weight: 700;
+}
+
+.input-wrapper__input:focus {
   border-style: solid;
 }
