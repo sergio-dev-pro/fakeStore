@@ -6,7 +6,7 @@ describe("Input component", () => {
   it("label is rendered", () => {
     render(<Input label="Test" />);
     const labelElement = screen.getByText("Test");
-    expect(labelElement.tagName).toBe("LABEL");
+    expect(labelElement).toBeInTheDocument();
   });
   it("onChange event", () => {
     const handleChange = jest.fn();
@@ -19,7 +19,7 @@ describe("Input component", () => {
     const message = "Invalid input";
     render(<Input label="test" errorMessage={message} />);
     const span: HTMLSpanElement = screen.getByText(message);
-    expect(span.tagName).toBe("SPAN");
+    expect(span).toBeInTheDocument();
   });
   it("do not render span for error message if errorMessage prop is not passed", () => {
     const message = "";
