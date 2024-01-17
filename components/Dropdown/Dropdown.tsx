@@ -1,44 +1,41 @@
-import React, { ReactElement, ReactNode, isValidElement } from "react";
-import { TARGET_KEY, Target } from "./components/Target";
-import { CONTENT_KEY, Content } from "./components/Content";
-import { Context, ContextProvider, ContextT } from "./context";
+import React, { ReactNode, useState } from "react";
+import { Button } from "../Button";
 import "./dropdown.scss";
+
 type Props = {
-  children: ReactElement[];
-  className?: string;
-};
-export const DROPDOWN_MUST_HAVE_TWO_CHILDREN =
-  "Dropdown deve receber Dropdown.Target and Dropdown.Content";
-const isTargetComponent = (firstChild: ReactElement) => {
-  return firstChild.props?.key === TARGET_KEY;
-};
-const isContentComponent = (secondChild: ReactElement) => {
-  return secondChild.props?.key === CONTENT_KEY;
+  title: string;
+  children: ReactNode;
 };
 
-export const Dropdown = ({ children, className }: Props) => {
-  if (children.length !== 2) throw Error(DROPDOWN_MUST_HAVE_TWO_CHILDREN);
-  if (isValidElement(children[0]) && !isTargetComponent(children[0]))
-    throw Error(DROPDOWN_MUST_HAVE_TWO_CHILDREN);
-  if (isValidElement(children[1]) && !isContentComponent(children[1]))
-    throw Error(DROPDOWN_MUST_HAVE_TWO_CHILDREN);
+export const Dropdown = ({ title, children }: Props) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => setIsVisible((s) => !s);
+  const handleMouseEnter = (e: any) => {
+    // If it's a touch event, it shouldn't call the function that shows the modal,
+    // because the click event is already called.
+    const isTouchEvent = e.nativeEvent.sourceCapabilities.firesTouchEvents;
+    if (isTouchEvent) return;
+
+    setIsVisible(true);
+  };
+  const handleMouseLeave = () => setIsVisible(false);
 
   return (
-    <ContextProvider>
-      <Context.Consumer>
-        {(value: ContextT) => (
-          <div
-            data-testid="dropdown"
-            className={`dropdown ${className}`}
-            onMouseLeave={() => value.toggleShowing(false)}
-          >
-            {children}
-          </div>
-        )}
-      </Context.Consumer>
-    </ContextProvider>
+    <div
+      data-testid="container"
+      className="dropdown"
+      onMouseLeave={handleMouseLeave}
+    >
+      <Button
+        onClick={toggleVisibility}
+        onMouseEnter={handleMouseEnter}
+        className="dropdown__button"
+        style="secondary"
+      >
+        {title}
+      </Button>
+      {isVisible && <div className="dropdown__visible">{children}</div>}
+    </div>
   );
 };
-
-Dropdown.Target = Target;
-Dropdown.Content = Content;
