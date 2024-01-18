@@ -1,6 +1,6 @@
 "use client";
 import { ChangeEvent, useEffect, useState } from "react";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { api } from "@/lib/api/api";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
@@ -22,6 +22,7 @@ export default function Login() {
   const [password, setPassword] = useState({ value: "", isValid: true });
   const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
   const [shouldShowErrorMessage, setShouldShowErrorMessage] = useState(false);
+  const router = useRouter()
 
   useEffect(() => {
     if (getCredentialsByCookie()) redirect("/");
@@ -54,11 +55,11 @@ export default function Login() {
           password: password.value,
         });
         setAuthCookie(username, response.data.token);
-        redirect("/");
       } catch (error) {
         setShouldShowErrorMessage(true);
       } finally {
         setShouldShowSpinner(false);
+        if (getCredentialsByCookie()) router.push("/");
       }
     })();
   };
