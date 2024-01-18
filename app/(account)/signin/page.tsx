@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useLayoutEffect, useState } from "react";
 import { redirect, useRouter } from "next/navigation";
 import { api } from "@/lib/api/api";
 import { Button } from "@/components/Button";
@@ -24,7 +24,7 @@ export default function Login() {
   const [shouldShowErrorMessage, setShouldShowErrorMessage] = useState(false);
   const router = useRouter()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (getCredentialsByCookie()) redirect("/");
   }, []);
 
