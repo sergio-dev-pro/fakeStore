@@ -1,4 +1,8 @@
-import { getCredentialsByCookie, setAuthCookie } from "./cookie";
+import {
+  getCredentialsByCookie,
+  removeAuthCookie,
+  setAuthCookie,
+} from "./cookie";
 
 describe("cookies test", () => {
   test("getCredentialsByCookie", () => {
@@ -11,5 +15,12 @@ describe("cookies test", () => {
     const credentials = getCredentialsByCookie();
     expect(typeof credentials?.username).toBe("string");
     expect(typeof credentials?.token).toBe("string");
+  });
+  test("removeAuthCookie", () => {
+    const username = "name",
+      token = "token";
+    setAuthCookie(username, token);
+    removeAuthCookie();
+    expect(getCredentialsByCookie()).toBeNull();
   });
 });
