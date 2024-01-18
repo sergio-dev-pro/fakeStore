@@ -1,5 +1,29 @@
+@use "@/styles/colors";
+
+.form-wrapper {
+  height: 50%;
+  width: 100%;
+}
+
+.signin-form {
+  border: 3px solid colors.$primary-color;
+  border-radius: 6px;
+  padding: 2.2vh 1rem;
+}
+
 .signin-form .button-wrapper {
   display: flex;
   justify-content: end;
   margin-top: 2vh;
+  align-items: center;
+}
+
+.form-wrapper > .error-message {
+  display: block;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.button-wrapper > .signin-form__spinner {
+  margin: 0 2vh;
 }

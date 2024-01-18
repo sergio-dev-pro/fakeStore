@@ -1,8 +1,11 @@
 "use client";
+import { ChangeEvent, useEffect, useState } from "react";
+import { redirect } from "next/navigation";
+import { api } from "@/lib/api/api";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
-import "./page.scss";
-import { ChangeEvent, useState } from "react";
+import { Spinner } from "@/components/Spinner";
+import { getCredentialsByCookie, setAuthCookie } from "@/helpers/cookie";
 import {
   BUTTON_LABEL,
   NAME_ERROR_MSG,
@@ -12,10 +15,17 @@ import {
   VALID_NAME,
   VALID_PASSWORD,
 } from "./consts";
+import "./page.scss";
 
 export default function Login() {
   const [name, setName] = useState({ value: "", isValid: true });
   const [password, setPassword] = useState({ value: "", isValid: true });
+  const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
+  const [shouldShowErrorMessage, setShouldShowErrorMessage] = useState(false);
+
+  useEffect(() => {
+    if (getCredentialsByCookie()) redirect("/");
+  }, []);
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
     setName((state) => ({ ...state, value: e.target.value }));
@@ -34,27 +44,53 @@ export default function Login() {
       setPassword((state) => ({ ...state, isValid: isValidPassword }));
 
     if (!isValidName || !isValidPassword) return;
+
+    (async () => {
+      try {
+        setShouldShowSpinner(true);
+        const username = name.value;
+        const response = await api.post("auth/login", {
+          username,
+          password: password.value,
+        });
+        setAuthCookie(username, response.data.token);
+        redirect("/");
+      } catch (error) {
+        setShouldShowErrorMessage(true);
+      } finally {
+        setShouldShowSpinner(false);
+      }
+    })();
   };
 
   const nameErrorMsg = !name.isValid ? NAME_ERROR_MSG : undefined;
   const passwordErrorMsg = !password.isValid ? PASSWORD_ERROR_MSG : undefined;
 
   return (
-    <form className="signin-form">
-      <Input
-        label={NAME_INPUT_LABEL}
-        onChange={handleNameChange}
-        errorMessage={nameErrorMsg}
-      />
-      <Input
-        label={PASSWORD_INPUT_LABEL}
-        type="password"
-        onChange={handlePasswordChange}
-        errorMessage={passwordErrorMsg}
-      />
-      <div className="button-wrapper">
-        <Button onClick={handleSubmit}>{BUTTON_LABEL}</Button>
-      </div>
-    </form>
+    <div className="form-wrapper">
+      <form className="signin-form">
+        <Input
+          label={NAME_INPUT_LABEL}
+          onChange={handleNameChange}
+          errorMessage={nameErrorMsg}
+        />
+        <Input
+          label={PASSWORD_INPUT_LABEL}
+          type="password"
+          onChange={handlePasswordChange}
+          errorMessage={passwordErrorMsg}
+        />
+        <div className="button-wrapper">
+          <Spinner
+            isVisible={shouldShowSpinner}
+            className="signin-form__spinner"
+          />
+          <Button onClick={handleSubmit}>{BUTTON_LABEL}</Button>
+        </div>
+      </form>
+      {shouldShowErrorMessage && (
+        <span className="error-message">Algo deu errado: tente novamente</span>
+      )}
+    </div>
   );
 }

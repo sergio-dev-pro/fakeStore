@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <main>
       <Logo />
-      <div className="form-wrapper">{children}</div>
+      {children}
     </main>
   );
 }
