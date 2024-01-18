@@ -1,0 +1,9 @@
+@use "./colors";
+
+.error-message {
+  border-radius: 3px;
+  padding: 9px;
+  font-size: 2.15vh;
+  color: colors.$error;
+  font-weight: 700;
+}
