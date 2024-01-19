@@ -1,13 +1,14 @@
 import React, { ReactNode, useState } from "react";
-import { Button } from "../Button";
+import { Button, buttonStyles } from "../Button";
 import "./dropdown.scss";
 
 type Props = {
   title: string;
   children: ReactNode;
+  buttonStyle?: buttonStyles;
 };
 
-export const Dropdown = ({ title, children }: Props) => {
+export const Dropdown = ({ title, children, buttonStyle }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => setIsVisible((s) => !s);
@@ -31,7 +32,7 @@ export const Dropdown = ({ title, children }: Props) => {
         onClick={toggleVisibility}
         onMouseEnter={handleMouseEnter}
         className="dropdown__button"
-        style="secondary"
+        style={buttonStyle ? buttonStyle : "secondary"}
       >
         {title}
       </Button>
