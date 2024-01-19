@@ -5,18 +5,39 @@ import { Button } from "../Button";
 import { Link } from "../Link";
 import { Dropdown } from "../Dropdown";
 import "./header.scss";
+import { getCredentialsByCookie, removeAuthCookie } from "@/helpers/cookie";
+import { redirect } from "next/navigation";
 
 export const Header = () => {
+  const credentials = getCredentialsByCookie();
+  const username = credentials?.username;
+
+  const exit = () => {
+    removeAuthCookie();
+    redirect("/signin");
+  };
+
   return (
     <header>
       <Logo />
-      <Dropdown title="Minha conta">
-        <Button style="secondary" className="dropdown__content__button">
-          <Link href="/signin">Fazer login</Link>
-        </Button>
-        <Button style="secondary" className="dropdown__content__button">
-          <Link href="/new-account">Criar conta</Link>
-        </Button>
+      <Dropdown
+        title={username ? username : "Minha conta"}
+        buttonStyle="secondary-blue"
+      >
+        {username ? (
+          <Button style="secondary" className="dropdown__content__button" onClick={exit}>
+            <Link href="/signin">Sair</Link>
+          </Button>
+        ) : (
+          <>
+            <Button style="secondary" className="dropdown__content__button">
+              <Link href="/signin">Fazer login</Link>
+            </Button>
+            <Button style="secondary" className="dropdown__content__button">
+              <Link href="/new-account">Criar conta</Link>
+            </Button>
+          </>
+        )}
       </Dropdown>
     </header>
   );
