@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { Logo } from "../Logo";
 import { Button } from "../Button";
 import { Link } from "../Link";
@@ -9,14 +9,18 @@ import { getCredentialsByCookie, removeAuthCookie } from "@/helpers/cookie";
 import { redirect } from "next/navigation";
 
 export const Header = () => {
-  const credentials = getCredentialsByCookie();
-  const username = credentials?.username;
+  const [credentials, setCredentials] = useState<any>();
+
+  useLayoutEffect(() => {
+    const credentials = getCredentialsByCookie();
+    if (credentials) setCredentials(credentials);
+  }, []);
 
   const exit = () => {
     removeAuthCookie();
     redirect("/signin");
   };
-
+  const username = credentials?.username;
   return (
     <header>
       <Logo />
@@ -25,7 +29,11 @@ export const Header = () => {
         buttonStyle="secondary-blue"
       >
         {username ? (
-          <Button style="secondary" className="dropdown__content__button" onClick={exit}>
+          <Button
+            style="secondary"
+            className="dropdown__content__button"
+            onClick={exit}
+          >
             <Link href="/signin">Sair</Link>
           </Button>
         ) : (
