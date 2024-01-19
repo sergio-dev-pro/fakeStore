@@ -23,3 +23,8 @@
   background-color: white;
   color: colors.$primary-color;
 }
+.button--secondary-blue {
+  background-color: white;
+  color: colors.$blue;
+  border: 1.5px solid colors.$blue;
+}

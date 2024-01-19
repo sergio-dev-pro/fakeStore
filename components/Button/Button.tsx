@@ -1,9 +1,10 @@
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import "./button.scss";
 
+export type buttonStyles = "primary" | "secondary" | "secondary-blue";
 type Props = {
   children: ReactNode;
-  style?: "primary" | "secondary";
+  style?: buttonStyles;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
@@ -12,9 +13,8 @@ export const Button = ({
   style = "primary",
   ...props
 }: Props) => {
-  const styleClassName = `button--${style === "primary" ? style : "secondary"}`;
   return (
-    <button className={`button ${styleClassName} ${className}`} {...props}>
+    <button className={`${className} ${"button--" + style} button`} {...props}>
       {children}
     </button>
   );
