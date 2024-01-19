@@ -18,8 +18,11 @@ header {
 }
 
 .dropdown__content__button:first-child {
-  margin-bottom: sizes.$spacing-3x3;
+  margin-bottom: sizes.$spacing-3x2;
 }
 .dropdown__content__button {
-  width: 100%;
+  min-width: 100%;
+}
+.dropdown__exit-button {
+  min-width: 100%;
 }

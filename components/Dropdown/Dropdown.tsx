@@ -8,7 +8,11 @@ type Props = {
   buttonStyle?: buttonStyles;
 };
 
-export const Dropdown = ({ title, children, buttonStyle }: Props) => {
+export const Dropdown = ({
+  title,
+  children,
+  buttonStyle = "secondary",
+}: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => setIsVisible((s) => !s);
@@ -32,7 +36,7 @@ export const Dropdown = ({ title, children, buttonStyle }: Props) => {
         onClick={toggleVisibility}
         onMouseEnter={handleMouseEnter}
         className="dropdown__button"
-        style={buttonStyle ? buttonStyle : "secondary"}
+        style={buttonStyle}
       >
         {title}
       </Button>

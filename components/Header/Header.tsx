@@ -26,12 +26,12 @@ export const Header = () => {
       <Logo />
       <Dropdown
         title={username ? username : "Minha conta"}
-        buttonStyle="secondary-blue"
+        buttonStyle={username && "secondary-blue"}
       >
         {username ? (
           <Button
             style="secondary"
-            className="dropdown__content__button"
+            className="dropdown__exit-button"
             onClick={exit}
           >
             <Link href="/signin">Sair</Link>
