@@ -4,16 +4,18 @@ import "./input.scss";
 type Props = {
   label: string;
   errorMessage?: string;
+  containerClassName?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = ({
   label,
   type = "text",
   errorMessage = "",
+  containerClassName,
   ...props
 }: Props) => {
   return (
-    <div className="input-wrapper">
+    <div className={containerClassName + " input-wrapper"}>
       <label className="input-wrapper__label">{label}</label>
       <input
         className="input-wrapper__input"

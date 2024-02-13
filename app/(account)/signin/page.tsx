@@ -16,13 +16,15 @@ import {
   VALID_PASSWORD,
 } from "./consts";
 import "./page.scss";
+import { Logo } from "@/components/Logo";
+import "@/styles/globals.scss";
 
 export default function Login() {
   const [name, setName] = useState({ value: "", isValid: true });
   const [password, setPassword] = useState({ value: "", isValid: true });
   const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
   const [shouldShowErrorMessage, setShouldShowErrorMessage] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   useLayoutEffect(() => {
     if (getCredentialsByCookie()) redirect("/");
@@ -68,30 +70,35 @@ export default function Login() {
   const passwordErrorMsg = !password.isValid ? PASSWORD_ERROR_MSG : undefined;
 
   return (
-    <div className="form-wrapper">
-      <form className="signin-form">
-        <Input
-          label={NAME_INPUT_LABEL}
-          onChange={handleNameChange}
-          errorMessage={nameErrorMsg}
-        />
-        <Input
-          label={PASSWORD_INPUT_LABEL}
-          type="password"
-          onChange={handlePasswordChange}
-          errorMessage={passwordErrorMsg}
-        />
-        <div className="button-wrapper">
-          <Spinner
-            isVisible={shouldShowSpinner}
-            className="signin-form__spinner"
+    <main>
+      <Logo />
+      <div className="form-wrapper">
+        <form className="signin-form">
+          <Input
+            label={NAME_INPUT_LABEL}
+            onChange={handleNameChange}
+            errorMessage={nameErrorMsg}
           />
-          <Button onClick={handleSubmit}>{BUTTON_LABEL}</Button>
-        </div>
-      </form>
-      {shouldShowErrorMessage && (
-        <span className="error-message">Algo deu errado: tente novamente</span>
-      )}
-    </div>
+          <Input
+            label={PASSWORD_INPUT_LABEL}
+            type="password"
+            onChange={handlePasswordChange}
+            errorMessage={passwordErrorMsg}
+          />
+          <div className="button-wrapper">
+            <Spinner
+              isVisible={shouldShowSpinner}
+              className="signin-form__spinner"
+            />
+            <Button onClick={handleSubmit}>{BUTTON_LABEL}</Button>
+          </div>
+        </form>
+        {shouldShowErrorMessage && (
+          <span className="error-message">
+            Algo deu errado: tente novamente
+          </span>
+        )}
+      </div>
+    </main>
   );
 }

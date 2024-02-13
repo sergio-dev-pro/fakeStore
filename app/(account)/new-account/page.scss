@@ -1,0 +1,89 @@
+@use "@/styles/colors";
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  gap: 1.8vh;
+  padding: 2.5vh;
+  margin: 0 auto;
+}
+
+form {
+  width: 100%;
+}
+
+.signin-form {
+  border: 3px solid colors.$primary-color;
+  border-radius: 6px;
+  padding: 2.2vh 1rem;
+}
+
+.signin-form .button-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: 2vh;
+  align-items: center;
+}
+
+.form-wrapper > .error-message {
+  display: block;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.button-wrapper > .signin-form__spinner {
+  margin: 0 2vh;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: auto;
+  // grid-template-columns: auto auto auto;
+  column-gap: 2vh;
+  max-width: 600px;
+}
+.form-container__input--full-column {
+  grid-column-start: 1;
+}
+// .form-container__input--full-column {
+//   grid-column-start: 1;
+//   grid-column-end: 4;
+// }
+.form-container__phone-input {
+  grid-column-start: 1;
+}
+// .form-container__phone-input {
+//   grid-column-start: 1;
+//   grid-column-end: 3;
+// }
+.form-container__zipcode-input {
+  grid-column-start: 1;
+}
+// .form-container__zipcode-input {
+//   grid-column-start: 3;
+// }
+.form-container__street-input {
+  grid-column-start: 1;
+}
+// .form-container__street-input {
+//   grid-column-start: 1;
+//   grid-column-end: 3;
+// }
+.form-container__number-input {
+  grid-column-start: 1;
+}
+// .form-container__number-input {
+//   grid-column-start: 3;
+// }
+.form-container__city-input {
+  grid-column-start: 1;
+}
+.form-container__password-input {
+  grid-column-start: 1;
+}
+.form-container__password-confirm-input {
+  grid-column-start: 1;
+}

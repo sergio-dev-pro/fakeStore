@@ -1,5 +1,17 @@
 @use "@/styles/colors";
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1.8vh;
+  padding: 0 1.8vh;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .form-wrapper {
   height: 50%;
   width: 100%;
