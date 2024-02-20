@@ -23,6 +23,9 @@ import {
   formatNumber,
   formatPhone,
 } from "@/helpers/format";
+import { Spinner } from "@/components/Spinner";
+import { api } from "@/lib/api/api";
+import { useRouter } from "next/navigation";
 
 type InputStates = typeof initialState;
 type ActionType = keyof InputStates;
@@ -148,6 +151,10 @@ export default function NewAccount() {
     dispatch,
   ] = useReducer<typeof reducer<InputStates>>(reducer, initialState);
   const [mustShowErrors, setMustShowErrors] = useState(false);
+  const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
+  const [shouldShowErrorMessage, setShouldShowErrorMessage] = useState(false);
+
+  const router = useRouter();
 
   const buildHandleChange =
     (actionType: ActionType) => (e: ChangeEvent<HTMLInputElement>) =>
@@ -155,7 +162,52 @@ export default function NewAccount() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (username.error) setMustShowErrors(true);
+    if (
+      username.error ||
+      firstname.error ||
+      lastname.error ||
+      phone.error ||
+      zipcode.error ||
+      number.error ||
+      street.error ||
+      city.error ||
+      password.error ||
+      passwordConfirm.error
+    )
+      return setMustShowErrors(true);
+
+    (async () => {
+      try {
+        setShouldShowSpinner(true);
+        const newUser = {
+          // FIXME: Adiconar valor recebido por input
+          email: "John@gmail.com",
+          username: username.value,
+          password: password.value,
+          name: {
+            firstname: firstname.value,
+            lastname: lastname.value,
+          },
+          address: {
+            city: city.value,
+            street: street.value,
+            number: number.value,
+            zipcode: zipcode.value,
+            geolocation: {
+              lat: "-37.3159",
+              long: "81.1496",
+            },
+          },
+          phone: phone.value,
+        };
+        const response = await api.post("users", newUser);
+        router.push("/signin");
+      } catch (error) {
+        setShouldShowErrorMessage(true);
+      } finally {
+        setShouldShowSpinner(false);
+      }
+    })();
   };
 
   const showErrorMsg = (msg: string | undefined) =>
@@ -172,6 +224,7 @@ export default function NewAccount() {
           value={username.value}
           errorMessage={showErrorMsg(username.error)}
         />
+        {/* TODO: Adicionar campo de email com validação */}
         <Input
           containerClassName="form-container__input--full-column"
           label={LABEL.FIRST_NAME}
@@ -187,56 +240,69 @@ export default function NewAccount() {
           value={lastname.value}
         />
         <Input
-          containerClassName="form-container__phone-input"
+          containerClassName="form-container__phone-input form-container__input--full-column"
           label={LABEL.PHONE}
           onChange={buildHandleChange("phone")}
           errorMessage={showErrorMsg(phone.error)}
           value={phone.value}
         />
         <Input
-          containerClassName="form-container__zipcode-input"
+          containerClassName="form-container__zipcode-input form-container__input--full-column"
           label={LABEL.CEP}
           onChange={buildHandleChange("zipcode")}
           value={zipcode.value}
           errorMessage={showErrorMsg(zipcode.error)}
         />
         <Input
-          containerClassName="form-container__street-input"
+          containerClassName="form-container__street-input form-container__input--full-column"
           label={LABEL.STREET}
           onChange={buildHandleChange("street")}
           value={street.value}
           errorMessage={showErrorMsg(street.error)}
         />
         <Input
-          containerClassName="form-container__number-input"
+          containerClassName="form-container__number-input form-container__input--full-column"
           label={LABEL.NUMBER}
           onChange={buildHandleChange("number")}
           value={number.value}
           errorMessage={showErrorMsg(number.error)}
-          />
+        />
         <Input
-          containerClassName="form-container__city-input"
+          containerClassName="form-container__city-input form-container__input--full-column"
           label={LABEL.CITY}
           onChange={buildHandleChange("city")}
           value={city.value}
           errorMessage={showErrorMsg(city.error)}
-          />
+        />
         <Input
-          containerClassName="form-container__password-input"
+          type="password"
+          containerClassName="form-container__password-input form-container__input--full-column"
           label={LABEL.PASSWORD}
           value={password.value}
           errorMessage={showErrorMsg(password.error)}
           onChange={buildHandleChange("password")}
-          />
+        />
         <Input
-          containerClassName="form-container__password-confirm-input"
+          type="password"
+          containerClassName="form-container__password-confirm-input form-container__input--full-column"
           label={LABEL.CONFIRM_PASSWORD}
           onChange={buildHandleChange("passwordConfirm")}
           value={passwordConfirm.value}
           errorMessage={showErrorMsg(passwordConfirm.error)}
         />
+        <Spinner
+          isVisible={shouldShowSpinner}
+          className="form-container__spinner"
+        />
+        <Button className="form-container__button" onClick={handleSubmit}>
+          Criar
+        </Button>
+        {shouldShowErrorMessage && (
+          <span className="error-message">
+            Algo deu errado: tente novamente
+          </span>
+        )}
       </form>
-        <Button onClick={handleSubmit}>Criar</Button>
     </main>
   );
 }
