@@ -295,7 +295,7 @@ export default function NewAccount() {
           className="form-container__spinner"
         />
         <Button className="form-container__button" onClick={handleSubmit}>
-          Criar
+          Pronto
         </Button>
         {shouldShowErrorMessage && (
           <span className="error-message">
