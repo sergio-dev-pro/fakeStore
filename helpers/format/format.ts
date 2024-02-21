@@ -24,3 +24,13 @@ export const formatCEP = (cep: string): string => {
 export const formatNumber = (num: string): string => num.replace(/\D/g, "");
 export const formatCity = (num: string): string =>
   num.replace(/[^a-zA-Z\s]/g, "");
+
+// Fromatar numero para moeda
+const options = {
+  style: "currency",
+  currency: "BRL",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 3,
+};
+export const formatNumberToCurrency = new Intl.NumberFormat("pt-BR", options)
+  .format;

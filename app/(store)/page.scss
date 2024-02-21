@@ -1,0 +1,68 @@
+@use "@/styles/colors";
+
+section {
+  padding: 2vh;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.product-card {
+  border: 1.5px solid colors.$primary-color;
+  border-radius: 6px;
+  padding: 2.2vh;
+  display: flex;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card__img {
+  position: relative;
+  height: 12vh;
+  width: 12vh;
+  margin-right: 2vh;
+}
+
+.product-card > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  flex-grow: 1;
+}
+
+.product-card__title {
+  font-size: 2vh;
+  grid-column: 1 / -1;
+}
+
+.product-card > div > div {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.product-card__price {
+  font-size: 3vh;
+  grid-column: 1/ 2;
+  color: #2c4c7f;
+}
+
+// A cada 270px, adicionar uma coluna
+@media only screen and (min-width: 540px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+  }
+}
+@media only screen and (min-width: 810px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
