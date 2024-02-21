@@ -214,7 +214,7 @@ export default function NewAccount() {
     mustShowErrors ? msg : undefined;
 
   return (
-    <main>
+    <main className="main">
       <Logo />
       <form className="form-container">
         <Input

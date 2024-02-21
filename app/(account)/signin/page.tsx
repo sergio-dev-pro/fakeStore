@@ -70,7 +70,7 @@ export default function Login() {
   const passwordErrorMsg = !password.isValid ? PASSWORD_ERROR_MSG : undefined;
 
   return (
-    <main>
+    <main className="main">
       <Logo />
       <div className="form-wrapper">
         <form className="signin-form">
