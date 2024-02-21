@@ -17,12 +17,16 @@ header {
   }
 }
 
-.dropdown__content__button:first-child {
+.dropdown__login-button {
   margin-bottom: sizes.$spacing-3x2;
 }
-.dropdown__content__button {
+.dropdown__button {
   min-width: 100%;
 }
 .dropdown__exit-button {
   min-width: 100%;
+}
+
+.dropdown__my-account-button {
+  padding: 1.5vh 2vh !important;
 }

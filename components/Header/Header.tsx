@@ -27,21 +27,25 @@ export const Header = () => {
       <Dropdown
         title={username ? username : "Minha conta"}
         buttonStyle={username && "secondary-blue"}
+        buttonClassName="dropdown__my-account-button"
       >
         {username ? (
           <Button
             style="secondary"
-            className="dropdown__exit-button"
+            className="dropdown__button dropdown__exit-button"
             onClick={exit}
           >
             <Link href="/signin">Sair</Link>
           </Button>
         ) : (
           <>
-            <Button style="secondary" className="dropdown__content__button">
+            <Button
+              style="secondary"
+              className=" dropdown__button dropdown__login-button"
+            >
               <Link href="/signin">Fazer login</Link>
             </Button>
-            <Button style="secondary" className="dropdown__content__button">
+            <Button style="secondary" className="dropdown__button">
               <Link href="/new-account">Criar conta</Link>
             </Button>
           </>

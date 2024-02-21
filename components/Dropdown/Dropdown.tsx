@@ -6,12 +6,14 @@ type Props = {
   title: string;
   children: ReactNode;
   buttonStyle?: buttonStyles;
+  buttonClassName?: string;
 };
 
 export const Dropdown = ({
   title,
   children,
   buttonStyle = "secondary",
+  buttonClassName,
 }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -35,7 +37,7 @@ export const Dropdown = ({
       <Button
         onClick={toggleVisibility}
         onMouseEnter={handleMouseEnter}
-        className="dropdown__button"
+        className={buttonClassName + " dropdown__button"}
         style={buttonStyle}
       >
         {title}
