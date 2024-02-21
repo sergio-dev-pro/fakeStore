@@ -6,11 +6,11 @@
   background-color: white;
   border: 1.5px solid colors.$primary-color;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: 700;
   // base 11px a cada 740px de altura
-  padding: 1.5vh;
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1);
   // base 21px a cada 740px de altura
-  font-size: 2.85vh;
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   cursor: pointer;
 }
 
