@@ -12,6 +12,9 @@
   height: sizes.calcSizeOfVwPlusVhDividedByTwo(8.25);
 
   @include breakpoints.min(medium) {
-    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(6.25));
+    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(7.25));
+  }
+  @include breakpoints.min(large) {
+    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(6.5));
   }
 }

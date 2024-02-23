@@ -1,30 +1,35 @@
 @use "@/styles/colors";
+@use "@/styles/sizes";
+@use "@/styles/breakpoints";
 
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5vh
+  margin-bottom: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
 }
 
 .input-wrapper__label {
-  font-size: 2.7vh;
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.5);
+  }
   color: colors.$primary-color;
   font-weight: 700;
-  margin-bottom: 3px
+  margin-bottom: 3px;
 }
 
 .input-wrapper__input {
   border: 1.8px dashed colors.$primary-color;
   border-radius: 3px;
-  padding: 1.5vh;
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
   outline: none;
-  font-size: 2.3vh;
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
   font-weight: 700;
   width: 100%;
 }
 .input-wrapper__span {
   padding-top: 2px;
-  font-size: 2.15vh;
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.15);
   color: #8c2424;
   font-weight: 700;
 }
