@@ -46,8 +46,9 @@ section {
 }
 
 .product-card__title {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.2);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
   grid-column: 1 / -1;
+  font-weight: 500;
   @include breakpoints.min(medium) {
     font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.6);
   }
