@@ -28,5 +28,6 @@ header {
 }
 
 .dropdown__my-account-button {
-  padding: 1.5vh 2vh !important;
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5)
+    sizes.calcSizeOfVwPlusVhDividedByTwo(2) !important;
 }

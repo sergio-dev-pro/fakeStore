@@ -8,9 +8,12 @@
   border-radius: 3px;
   font-weight: 700;
   // base 11px a cada 740px de altura
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1);
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
   // base 21px a cada 740px de altura
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.2);
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
+  }
   cursor: pointer;
 }
 

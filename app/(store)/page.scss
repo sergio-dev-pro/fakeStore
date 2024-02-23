@@ -11,7 +11,7 @@ section {
     grid-template-columns: 1fr 1fr;
   }
   @include breakpoints.min(large) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -30,8 +30,8 @@ section {
 
 .product-card__img {
   position: relative;
-  height: calc((12vw + 12vh) / 2);
-  width: calc((12vw + 12vh) / 2);
+  height: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
+  width: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
   margin-right: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   @include breakpoints.min(medium) {
     justify-self: center;
@@ -46,10 +46,13 @@ section {
 }
 
 .product-card__title {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.2);
   grid-column: 1 / -1;
-  @include breakpoints.min(large) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.6);
+  }
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.2);
   }
 }
 
@@ -62,10 +65,10 @@ section {
 }
 
 .product-card__price {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.8);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.5);
   grid-column: 1/ 2;
   color: #2c4c7f;
   @include breakpoints.min(large) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.1);
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.7);
   }
 }

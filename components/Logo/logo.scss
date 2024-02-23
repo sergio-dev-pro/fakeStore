@@ -1,20 +1,17 @@
 @use "@/styles/breakpoints";
+@use "@/styles/sizes";
 
 @mixin sizes($size) {
   width: $size;
   height: $size;
 }
+
 .logo {
   position: relative;
-  // base 55px a cada 667px de altura
-  @include sizes(8.25vh);
-  // @include breakpoints.min(medium) {
-  //   @include sizes(60px);
-  // }
-  // @include breakpoints.min(x-large) {
-  //   @include sizes(70px);
-  // }
-  // @include breakpoints.min(x-large) {
-  //   @include sizes(80px);
-  // }
+  width: sizes.calcSizeOfVwPlusVhDividedByTwo(8.25);
+  height: sizes.calcSizeOfVwPlusVhDividedByTwo(8.25);
+
+  @include breakpoints.min(medium) {
+    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(6.25));
+  }
 }
