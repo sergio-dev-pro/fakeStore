@@ -21,6 +21,10 @@
   background-color: colors.$primary-color;
   color: white;
 }
+.button--bluish-green-secondary {
+  color: colors.$bluishGreen;
+  border: 1.5px solid colors.$bluishGreen;
+}
 
 .button--secondary {
   background-color: white;
