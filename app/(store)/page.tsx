@@ -27,7 +27,7 @@ export default async function Home() {
               <span className="product-card__price">
                 {formatNumberToCurrency(product.price)}
               </span>
-              <Button style="bluish-green-secondary">+</Button>
+              <Button style="secondary">+</Button>
             </div>
           </div>
         </div>
