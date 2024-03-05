@@ -7,15 +7,15 @@
   border: 1.5px solid colors.$primary-color;
   border-radius: 3px;
   font-weight: 700;
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.2);
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
+  padding: 1.2rem;
+  font-size: 3rem;
   @include breakpoints.min(medium) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1);
+    font-size: 2.3rem;
+    padding: 1rem;
   }
   @include breakpoints.min(large) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(0.8);
+    font-size: 2rem;
+    padding: 0.8rem;
   }
   cursor: pointer;
 }

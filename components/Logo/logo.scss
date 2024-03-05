@@ -8,13 +8,13 @@
 
 .logo {
   position: relative;
-  width: sizes.calcSizeOfVwPlusVhDividedByTwo(8.25);
-  height: sizes.calcSizeOfVwPlusVhDividedByTwo(8.25);
+  width: 8.25rem;
+  height: 8.25rem;
 
   @include breakpoints.min(medium) {
-    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(7.25));
+    @include sizes(7.25rem);
   }
   @include breakpoints.min(large) {
-    @include sizes(sizes.calcSizeOfVwPlusVhDividedByTwo(6.5));
+    @include sizes(6.5rem);
   }
 }

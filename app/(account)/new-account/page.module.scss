@@ -9,7 +9,7 @@
   align-items: center;
   min-height: 100%;
   gap: 1.8vh;
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  padding: 2rem;
   margin: 0 auto;
 }
 
@@ -21,9 +21,9 @@
   width: 100%;
   border: 1.5px solid colors.$primary-color;
   border-radius: 6px;
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
+  padding: 3rem;
   @include breakpoints.min(medium) {
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2.5);
+    padding: 2.5rem;
   }
 }
 

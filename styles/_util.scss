@@ -5,7 +5,7 @@
 .error-message {
   border-radius: 3px;
   padding: 9px;
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
+  font-size: 3rem;
   color: colors.$error;
   font-weight: 700;
 }

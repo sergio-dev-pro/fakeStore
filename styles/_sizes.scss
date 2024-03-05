@@ -16,6 +16,8 @@ $spacing-3x15: 45px;
 $spacing-3x16: 45px;
 $spacing-3x17: 48px;
 
+$base: calc((1vh + 1vw) / 2);
+
 @function calcSizeOfVwPlusVhDividedByTwo($size) {
   $sizevh: $size * 1vh;
   $sizevw: $size * 1vw;

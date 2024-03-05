@@ -3,21 +3,21 @@
 @use "@/styles/sizes";
 
 section {
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  gap: 2rem;
   @include breakpoints.min(medium) {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
+    gap: 1.8rem;
   }
   @include breakpoints.min(large) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+    gap: 1.5rem;
   }
   @include breakpoints.min(x-large) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+    gap: 1.5rem;
   }
 }
 
@@ -29,23 +29,23 @@ section {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .product-card__grid-row-1 {
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2.2);
+  padding: 2.2rem;
   display: flex;
   justify-content: center;
   @include breakpoints.min(medium) {
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+    padding: 2rem;
   }
   @include breakpoints.min(large) {
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
+    padding: 1.8rem;
   }
 }
 
 .product-card__grid-row-2 {
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2.2);
+  padding: 2.2rem;
   border-radius: 0 6px 6px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -55,31 +55,31 @@ section {
     border-radius: 0 0 6px 6px;
   }
   @include breakpoints.min(medium) {
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1);
+    padding: 1rem;
   }
   @include breakpoints.min(large) {
-    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+    padding: 1.5rem;
   }
 }
 
 .product-card__img {
   position: relative;
-  height: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
-  width: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
+  height: 15rem;
+  width: 15rem;
   @include breakpoints.min(medium) {
     justify-self: center;
   }
 }
 
 .product-card__title {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.6);
+  font-size: 2.6rem;
   grid-column: 1 / -1;
   font-weight: 500;
   @include breakpoints.min(medium) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.2);
+    font-size: 2.2rem;
   }
   @include breakpoints.min(large) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
+    font-size: 1.8rem;
   }
 }
 
@@ -92,13 +92,13 @@ section {
 }
 
 .product-card__price {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.8);
+  font-size: 2.8rem;
   grid-column: 1/ 2;
   color: #2c4c7f;
   @include breakpoints.min(medium) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.4);
+    font-size: 2.4rem;
   }
   @include breakpoints.min(large) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+    font-size: 2rem;
   }
 }
