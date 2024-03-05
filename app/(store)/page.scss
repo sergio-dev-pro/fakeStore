@@ -12,6 +12,10 @@ section {
     gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
   }
   @include breakpoints.min(large) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+  }
+  @include breakpoints.min(x-large) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
   }
