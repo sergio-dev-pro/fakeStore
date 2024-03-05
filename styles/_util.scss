@@ -6,9 +6,6 @@
   border-radius: 3px;
   padding: 9px;
   font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
-  // @include breakpoints.min(medium) {
-  //   font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
-  // }
   color: colors.$error;
   font-weight: 700;
 }

@@ -61,7 +61,6 @@ section {
   position: relative;
   height: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
   width: sizes.calcSizeOfVwPlusVhDividedByTwo(15);
-  // margin-right: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   @include breakpoints.min(medium) {
     justify-self: center;
   }
