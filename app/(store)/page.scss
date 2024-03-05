@@ -19,7 +19,6 @@ section {
   border-radius: 6px;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   @include breakpoints.min(medium) {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -87,9 +86,12 @@ section {
 }
 
 .product-card__price {
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.5);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.2);
   grid-column: 1/ 2;
   color: #2c4c7f;
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.8);
+  }
   @include breakpoints.min(large) {
     font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   }
