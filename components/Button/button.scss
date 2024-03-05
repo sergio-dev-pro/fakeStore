@@ -7,8 +7,8 @@
   border: 1.5px solid colors.$primary-color;
   border-radius: 3px;
   font-weight: 700;
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
-  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3.2);
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.2);
+  font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
   @include breakpoints.min(medium) {
     font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
     padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1);
