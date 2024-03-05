@@ -1,4 +1,6 @@
 @use "@/styles/colors";
+@use "@/styles/sizes";
+@use "@/styles/breakpoints";
 
 .main {
   display: flex;
@@ -7,7 +9,7 @@
   align-items: center;
   min-height: 100%;
   gap: 1.8vh;
-  padding: 2.5vh;
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
   margin: 0 auto;
 }
 
@@ -17,9 +19,12 @@
   column-gap: 2vh;
   max-width: 500px;
   width: 100%;
-  border: 3px solid colors.$primary-color;
+  border: 1.5px solid colors.$primary-color;
   border-radius: 6px;
-  padding: 2.2vh 1rem;
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(3);
+  @include breakpoints.min(medium) {
+    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(2.5);
+  }
 }
 
 .form-container__input--full-column {

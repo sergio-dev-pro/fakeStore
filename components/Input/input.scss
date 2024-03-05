@@ -13,6 +13,9 @@
   @include breakpoints.min(medium) {
     font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.5);
   }
+  @include breakpoints.min(large) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  }
   color: colors.$primary-color;
   font-weight: 700;
   margin-bottom: 3px;
@@ -21,20 +24,31 @@
 .input-wrapper__input {
   border: 1.8px dashed colors.$primary-color;
   border-radius: 3px;
-  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+  padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
   outline: none;
   font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.3);
   font-weight: 700;
   width: 100%;
+  @include breakpoints.min(medium) {
+    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.4);
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
+  }
+  @include breakpoints.min(large) {
+    padding: sizes.calcSizeOfVwPlusVhDividedByTwo(1.2);
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(1.8);
+  }
 }
 .input-wrapper__span {
   padding-top: 2px;
   font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.5);
-  @include breakpoints.min(medium) {
-    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2);
-  }
   color: #8c2424;
   font-weight: 700;
+  @include breakpoints.min(medium) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(2.2);
+  }
+  @include breakpoints.min(large) {
+    font-size: sizes.calcSizeOfVwPlusVhDividedByTwo(1.5);
+  }
 }
 
 .input-wrapper__input:focus {
