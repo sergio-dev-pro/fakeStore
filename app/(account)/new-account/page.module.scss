@@ -13,7 +13,7 @@
   margin: 0 auto;
 }
 
-.form-container {
+.formContainer {
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 2vh;
@@ -27,33 +27,33 @@
   }
 }
 
-.form-container__input--full-column {
+.inputFullColumn {
   grid-column: 1 / -1;
 }
 
-.form-container__button {
+.button {
   grid-column: 4/7;
   margin-top: 1.5vh;
 }
 
-.form-container__spinner {
+.spinner {
   grid-column: 3 / 4;
 }
 
 @media only screen and (min-width: 320px) {
-  .form-container {
+  .formContainer {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-  .form-container__phone-input {
+  .phoneInput {
     grid-column: 1 / 4;
   }
-  .form-container__zipcode-input {
+  .zipcodeInput {
     grid-column-start: 4;
   }
-  .form-container__number-input {
+  .numberInput {
     grid-column: 1 / 2;
   }
-  .form-container__city-input {
+  .cityInput {
     grid-column: 2 / 7;
   }
 }

@@ -3,7 +3,7 @@ import { Input } from "@/components/Input";
 import React, { ChangeEvent, EventHandler, useReducer, useState } from "react";
 import { Logo } from "@/components/Logo";
 import "@/styles/globals.scss";
-import "./page.scss";
+import styles from "./page.module.scss";
 import { LABEL } from "@/consts/newAccountPage";
 import { Button } from "@/components/Button";
 import {
@@ -214,11 +214,11 @@ export default function NewAccount() {
     mustShowErrors ? msg : undefined;
 
   return (
-    <main className="main">
+    <main className={styles.main}>
       <Logo />
-      <form className="form-container">
+      <form className={styles.formContainer}>
         <Input
-          containerClassName="form-container__input--full-column"
+          containerClassName={styles.inputFullColumn}
           label={LABEL.USER_NAME}
           onChange={buildHandleChange("username")}
           value={username.value}
@@ -226,49 +226,49 @@ export default function NewAccount() {
         />
         {/* TODO: Adicionar campo de email com validação */}
         <Input
-          containerClassName="form-container__input--full-column"
+          containerClassName={styles.inputFullColumn}
           label={LABEL.FIRST_NAME}
           onChange={buildHandleChange("firstname")}
           errorMessage={showErrorMsg(firstname.error)}
           value={firstname.value}
         />
         <Input
-          containerClassName="form-container__input--full-column"
+          containerClassName={styles.inputFullColumn}
           label={LABEL.LAST_NAME}
           onChange={buildHandleChange("lastname")}
           errorMessage={showErrorMsg(lastname.error)}
           value={lastname.value}
         />
         <Input
-          containerClassName="form-container__phone-input form-container__input--full-column"
+          containerClassName={`${styles.phoneInput} ${styles.inputFullColumn}`}
           label={LABEL.PHONE}
           onChange={buildHandleChange("phone")}
           errorMessage={showErrorMsg(phone.error)}
           value={phone.value}
         />
         <Input
-          containerClassName="form-container__zipcode-input form-container__input--full-column"
+          containerClassName={`${styles.zipcodeInput} ${styles.inputFullColumn}`}
           label={LABEL.CEP}
           onChange={buildHandleChange("zipcode")}
           value={zipcode.value}
           errorMessage={showErrorMsg(zipcode.error)}
         />
         <Input
-          containerClassName="form-container__street-input form-container__input--full-column"
+          containerClassName={`${styles.streetInput} ${styles.inputFullColumn}`}
           label={LABEL.STREET}
           onChange={buildHandleChange("street")}
           value={street.value}
           errorMessage={showErrorMsg(street.error)}
         />
         <Input
-          containerClassName="form-container__number-input form-container__input--full-column"
+          containerClassName={`${styles.numberInput} ${styles.inputFullColumn}`}
           label={LABEL.NUMBER}
           onChange={buildHandleChange("number")}
           value={number.value}
           errorMessage={showErrorMsg(number.error)}
         />
         <Input
-          containerClassName="form-container__city-input form-container__input--full-column"
+          containerClassName={`${styles.cityInput} ${styles.inputFullColumn}`}
           label={LABEL.CITY}
           onChange={buildHandleChange("city")}
           value={city.value}
@@ -276,7 +276,7 @@ export default function NewAccount() {
         />
         <Input
           type="password"
-          containerClassName="form-container__password-input form-container__input--full-column"
+          containerClassName={`${styles.passwordInput} ${styles.inputFullColumn}`}
           label={LABEL.PASSWORD}
           value={password.value}
           errorMessage={showErrorMsg(password.error)}
@@ -284,21 +284,18 @@ export default function NewAccount() {
         />
         <Input
           type="password"
-          containerClassName="form-container__password-confirm-input form-container__input--full-column"
+          containerClassName={`${styles.passwordConfirmInput} ${styles.inputFullColumn}`}
           label={LABEL.CONFIRM_PASSWORD}
           onChange={buildHandleChange("passwordConfirm")}
           value={passwordConfirm.value}
           errorMessage={showErrorMsg(passwordConfirm.error)}
         />
-        <Spinner
-          isVisible={shouldShowSpinner}
-          className="form-container__spinner"
-        />
-        <Button className="form-container__button" onClick={handleSubmit}>
+        <Spinner isVisible={shouldShowSpinner} className={styles.spinner} />
+        <Button className={styles.button} onClick={handleSubmit}>
           Pronto
         </Button>
         {shouldShowErrorMessage && (
-          <span className="error-message">
+          <span className={styles.errorMessage}>
             Algo deu errado: tente novamente
           </span>
         )}
