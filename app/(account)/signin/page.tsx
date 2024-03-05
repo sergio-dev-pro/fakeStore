@@ -15,7 +15,7 @@ import {
   VALID_NAME,
   VALID_PASSWORD,
 } from "./consts";
-import "./page.scss";
+import styles from "./page.module.scss";
 import { Logo } from "@/components/Logo";
 import "@/styles/globals.scss";
 
@@ -70,10 +70,10 @@ export default function Login() {
   const passwordErrorMsg = !password.isValid ? PASSWORD_ERROR_MSG : undefined;
 
   return (
-    <main className="main">
+    <main className={styles.main}>
       <Logo />
-      <div className="form-wrapper">
-        <form className="signin-form">
+      <div className={styles.formWrapper}>
+        <form className={styles.signinForm}>
           <Input
             label={NAME_INPUT_LABEL}
             onChange={handleNameChange}
@@ -85,16 +85,16 @@ export default function Login() {
             onChange={handlePasswordChange}
             errorMessage={passwordErrorMsg}
           />
-          <div className="button-wrapper">
+          <div className={styles.buttonWrapper}>
             <Spinner
               isVisible={shouldShowSpinner}
-              className="signin-form__spinner"
+              className={styles.signinForm__spinner}
             />
             <Button onClick={handleSubmit}>{BUTTON_LABEL}</Button>
           </div>
         </form>
         {shouldShowErrorMessage && (
-          <span className="error-message">
+          <span className={styles.errorMessage}>
             Algo deu errado: tente novamente
           </span>
         )}

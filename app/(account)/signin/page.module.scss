@@ -12,28 +12,28 @@
   margin: 0 auto;
 }
 
-.form-wrapper {
+.formWrapper {
   height: 50%;
   width: 100%;
 }
 
-.signin-form {
+.signinForm {
   padding: 2.2vh 1rem;
 }
 
-.signin-form .button-wrapper {
+.signinForm .buttonWrapper {
   display: flex;
   justify-content: end;
   margin-top: 2vh;
   align-items: center;
 }
 
-.form-wrapper > .error-message {
+.formWrapper > .errorMessage {
   display: block;
   text-align: center;
   text-wrap: balance;
 }
 
-.button-wrapper > .signin-form__spinner {
+.buttonWrapper > .signinForm__spinner {
   margin: 0 2vh;
 }
