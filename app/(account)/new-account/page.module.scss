@@ -21,10 +21,6 @@
   width: 100%;
   border: 1.5px solid colors.$primary;
   border-radius: 6px;
-  padding: 3rem;
-  @include breakpoints.min(medium) {
-    padding: 2.5rem;
-  }
 }
 
 .inputFullColumn {

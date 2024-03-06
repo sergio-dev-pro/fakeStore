@@ -15,10 +15,12 @@ export const Input = ({
   ...props
 }: Props) => {
   return (
-    <div className={containerClassName + " input-wrapper text-large"}>
+    <div
+      className={containerClassName + " input-wrapper text-large"}
+    >
       <label className="input-wrapper__label text-large">{label}</label>
       <input
-        className="input-wrapper__input text-medium"
+        className="input-wrapper__input text-medium padding-small"
         aria-label={label}
         type={type}
         {...props}

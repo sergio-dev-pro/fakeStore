@@ -216,7 +216,7 @@ export default function NewAccount() {
   return (
     <main className={styles.main}>
       <Logo />
-      <form className={styles.formContainer}>
+      <form className={`${styles.formContainer} padding-large`}>
         <Input
           containerClassName={styles.inputFullColumn}
           label={LABEL.USER_NAME}

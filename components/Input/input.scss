@@ -17,16 +17,9 @@
 .input-wrapper__input {
   border: 1.8px dashed colors.$primary;
   border-radius: 3px;
-  padding: 1.8rem;
   outline: none;
   font-weight: 700;
   width: 100%;
-  @include breakpoints.min(medium) {
-    padding: 1.4rem;
-  }
-  @include breakpoints.min(large) {
-    padding: 1.2rem;
-  }
 }
 .input-wrapper__span {
   padding-top: 2px;

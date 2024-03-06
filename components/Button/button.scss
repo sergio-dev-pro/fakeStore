@@ -7,13 +7,6 @@
   border: 1.5px solid colors.$primary;
   border-radius: 3px;
   font-weight: 700;
-  padding: 1.2rem;
-  @include breakpoints.min(medium) {
-    padding: 1rem;
-  }
-  @include breakpoints.min(large) {
-    padding: 0.8rem;
-  }
   cursor: pointer;
 }
 

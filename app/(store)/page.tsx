@@ -15,13 +15,13 @@ export default async function Home() {
     <section>
       {products.map((product) => (
         <div className="product-card" key={product.id}>
-          <div className="product-card__grid-row-1">
+          <div className="product-card__grid-row-1 padding-small">
             <div className="product-card__img">
               <Image fill src={product.image} alt={product.title} />
             </div>
           </div>
 
-          <div className="product-card__grid-row-2">
+          <div className="product-card__grid-row-2 padding-x-small">
             <h1 className="product-card__title text-medium">{product.title}</h1>
             <div>
               <span className="product-card__price text-large">
