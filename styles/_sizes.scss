@@ -1,27 +1,22 @@
-@use "breakpoints";
+$spacing-3x1: 3px;
+$spacing-3x2: 6px;
+$spacing-3x3: 9px;
+$spacing-3x4: 12px;
+$spacing-3x5: 15px;
+$spacing-3x6: 18px;
+$spacing-3x7: 21px;
+$spacing-3x8: 24px;
+$spacing-3x9: 27px;
+$spacing-3x10: 30px;
+$spacing-3x11: 33px;
+$spacing-3x12: 36px;
+$spacing-3x13: 39px;
+$spacing-3x14: 42px;
+$spacing-3x15: 45px;
+$spacing-3x16: 45px;
+$spacing-3x17: 48px;
 
 $base: calc((1vh + 1vw) / 2);
-
-$spacing-xx-small: 0.9rem;
-$spacing-x-small: 1.2rem;
-$spacing-small: 1.5rem;
-$spacing-medium: 2.1rem;
-$spacing-large: 3rem;
-
-@include breakpoints.min(medium) {
-  $spacing-xx-small: 0.6rem;
-  $spacin-x-small: 0.9rem;
-  $spacing-small: 1.2rem;
-  $spacing-medium: 1.8rem;
-  $spacing-large: 2.7rem;
-}
-@include breakpoints.min(large) {
-  $spacing-xx-small: 0.3rem;
-  $spacin-x-small: 0.6rem;
-  $spacing-small: 0.9rem;
-  $spacing-medium: 1.5rem;
-  $spacing-large: 2.4rem;
-}
 
 @function calcSizeOfVwPlusVhDividedByTwo($size) {
   $sizevh: $size * 1vh;

@@ -19,9 +19,12 @@
   column-gap: 2vh;
   max-width: 500px;
   width: 100%;
-  border: 1.5px solid colors.$primary;
+  border: 1.5px solid colors.$primary-color;
   border-radius: 6px;
-  padding: sizes.$spacing-large;
+  padding: 3rem;
+  @include breakpoints.min(medium) {
+    padding: 2.5rem;
+  }
 }
 
 .inputFullColumn {

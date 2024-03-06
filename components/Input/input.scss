@@ -16,13 +16,13 @@
   @include breakpoints.min(large) {
     font-size: 2rem;
   }
-  color: colors.$primary;
+  color: colors.$primary-color;
   font-weight: 700;
   margin-bottom: 3px;
 }
 
 .input-wrapper__input {
-  border: 1.8px dashed colors.$primary;
+  border: 1.8px dashed colors.$primary-color;
   border-radius: 3px;
   padding: 1.8rem;
   outline: none;

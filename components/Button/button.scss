@@ -4,22 +4,24 @@
 
 .button {
   background-color: white;
-  border: 1.5px solid colors.$primary;
+  border: 1.5px solid colors.$primary-color;
   border-radius: 3px;
   font-weight: 700;
-  padding: sizes.$spacing-xx-small;
+  padding: 1.2rem;
   font-size: 3rem;
   @include breakpoints.min(medium) {
     font-size: 2.3rem;
+    padding: 1rem;
   }
   @include breakpoints.min(large) {
     font-size: 2rem;
+    padding: 0.8rem;
   }
   cursor: pointer;
 }
 
 .button--primary {
-  background-color: colors.$primary;
+  background-color: colors.$primary-color;
   color: white;
 }
 .button--bluish-green-secondary {
@@ -29,7 +31,7 @@
 
 .button--secondary {
   background-color: white;
-  color: colors.$primary;
+  color: colors.$primary-color;
 }
 .button--secondary-blue {
   background-color: white;
