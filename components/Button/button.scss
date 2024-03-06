@@ -4,7 +4,7 @@
 
 .button {
   background-color: white;
-  border: 1.5px solid colors.$primary-color;
+  border: 1.5px solid colors.$primary;
   border-radius: 3px;
   font-weight: 700;
   padding: 1.2rem;
@@ -21,7 +21,7 @@
 }
 
 .button--primary {
-  background-color: colors.$primary-color;
+  background-color: colors.$primary;
   color: white;
 }
 .button--bluish-green-secondary {
@@ -31,7 +31,7 @@
 
 .button--secondary {
   background-color: white;
-  color: colors.$primary-color;
+  color: colors.$primary;
 }
 .button--secondary-blue {
   background-color: white;
