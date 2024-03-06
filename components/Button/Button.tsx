@@ -18,7 +18,10 @@ export const Button = ({
   ...props
 }: Props) => {
   return (
-    <button className={`${className} ${"button--" + style} button`} {...props}>
+    <button
+      className={`${className} ${"button--" + style} button text-large`}
+      {...props}
+    >
       {children}
     </button>
   );

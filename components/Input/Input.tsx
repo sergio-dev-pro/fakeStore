@@ -15,16 +15,16 @@ export const Input = ({
   ...props
 }: Props) => {
   return (
-    <div className={containerClassName + " input-wrapper"}>
-      <label className="input-wrapper__label">{label}</label>
+    <div className={containerClassName + " input-wrapper text-large"}>
+      <label className="input-wrapper__label text-large">{label}</label>
       <input
-        className="input-wrapper__input"
+        className="input-wrapper__input text-medium"
         aria-label={label}
         type={type}
         {...props}
       />
       {errorMessage.length > 0 && (
-        <span className="input-wrapper__span">{errorMessage}</span>
+        <span className="input-wrapper__span text-small">{errorMessage}</span>
       )}
     </div>
   );

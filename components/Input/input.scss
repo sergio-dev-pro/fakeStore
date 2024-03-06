@@ -9,13 +9,6 @@
 }
 
 .input-wrapper__label {
-  font-size: 3rem;
-  @include breakpoints.min(medium) {
-    font-size: 2.5rem;
-  }
-  @include breakpoints.min(large) {
-    font-size: 2rem;
-  }
   color: colors.$primary;
   font-weight: 700;
   margin-bottom: 3px;
@@ -26,29 +19,19 @@
   border-radius: 3px;
   padding: 1.8rem;
   outline: none;
-  font-size: 2.3rem;
   font-weight: 700;
   width: 100%;
   @include breakpoints.min(medium) {
     padding: 1.4rem;
-    font-size: 2rem;
   }
   @include breakpoints.min(large) {
     padding: 1.2rem;
-    font-size: 1.8rem;
   }
 }
 .input-wrapper__span {
   padding-top: 2px;
-  font-size: 2.5rem;
   color: #8c2424;
   font-weight: 700;
-  @include breakpoints.min(medium) {
-    font-size: 2.2rem;
-  }
-  @include breakpoints.min(large) {
-    font-size: 1.5rem;
-  }
 }
 
 .input-wrapper__input:focus {

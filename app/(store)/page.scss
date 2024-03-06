@@ -72,15 +72,8 @@ section {
 }
 
 .product-card__title {
-  font-size: 2.6rem;
   grid-column: 1 / -1;
   font-weight: 500;
-  @include breakpoints.min(medium) {
-    font-size: 2.2rem;
-  }
-  @include breakpoints.min(large) {
-    font-size: 1.8rem;
-  }
 }
 
 .product-card > div.product-card__grid-row-2 > div {
@@ -92,13 +85,6 @@ section {
 }
 
 .product-card__price {
-  font-size: 2.8rem;
   grid-column: 1/ 2;
   color: #2c4c7f;
-  @include breakpoints.min(medium) {
-    font-size: 2.4rem;
-  }
-  @include breakpoints.min(large) {
-    font-size: 2rem;
-  }
 }

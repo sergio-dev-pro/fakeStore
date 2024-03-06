@@ -22,9 +22,9 @@ export default async function Home() {
           </div>
 
           <div className="product-card__grid-row-2">
-            <h1 className="product-card__title">{product.title}</h1>
+            <h1 className="product-card__title text-medium">{product.title}</h1>
             <div>
-              <span className="product-card__price">
+              <span className="product-card__price text-large">
                 {formatNumberToCurrency(product.price)}
               </span>
               <Button style="secondary">+</Button>
