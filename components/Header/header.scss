@@ -2,23 +2,19 @@
 @use "@/styles/sizes";
 
 header {
-  padding: sizes.$spacing-3x4 sizes.$spacing-3x3;
+  padding: sizes.$spacing-small sizes.$spacing-small;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 2000px;
 
-  @include breakpoints.min(medium) {
-    padding: sizes.$spacing-3x6 sizes.$spacing-3x7;
-  }
   @include breakpoints.min(x-large) {
-    padding: sizes.$spacing-3x8 sizes.$spacing-3x10;
     margin: 0 auto;
   }
 }
 
 .dropdown__login-button {
-  margin-bottom: sizes.$spacing-3x2;
+  margin-bottom: sizes.$spacing-xx-small;
 }
 .dropdown__button {
   min-width: 100%;

@@ -3,7 +3,7 @@
 @use "@/styles/sizes";
 
 section {
-  padding: 2rem;
+  padding: sizes.$spacing-small;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -33,19 +33,13 @@ section {
 }
 
 .product-card__grid-row-1 {
-  padding: 2.2rem;
+  padding: sizes.$spacing-x-small;
   display: flex;
   justify-content: center;
-  @include breakpoints.min(medium) {
-    padding: 2rem;
-  }
-  @include breakpoints.min(large) {
-    padding: 1.8rem;
-  }
 }
 
 .product-card__grid-row-2 {
-  padding: 2.2rem;
+  padding: sizes.$spacing-x-small;
   border-radius: 0 6px 6px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,12 +47,6 @@ section {
   flex-grow: 1;
   @include breakpoints.min(medium) {
     border-radius: 0 0 6px 6px;
-  }
-  @include breakpoints.min(medium) {
-    padding: 1rem;
-  }
-  @include breakpoints.min(large) {
-    padding: 1.5rem;
   }
 }
 
