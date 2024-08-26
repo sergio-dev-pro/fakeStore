@@ -28,12 +28,12 @@ a:active {
   }
 }
 .text-medium {
-  font-size: 2.6rem;
+  font-size: 2.7rem;
   @include breakpoints.min(medium) {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
   @include breakpoints.min(large) {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 }
 .text-large {
@@ -43,5 +43,14 @@ a:active {
   }
   @include breakpoints.min(large) {
     font-size: 2.2rem;
+  }
+}
+.text-x-large {
+  font-size: 3.2rem;
+  @include breakpoints.min(medium) {
+    font-size: 2.8rem;
+  }
+  @include breakpoints.min(large) {
+    font-size: 2.4rem;
   }
 }

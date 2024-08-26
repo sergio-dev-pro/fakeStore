@@ -24,7 +24,7 @@ export default async function Home() {
           <div className="product-card__grid-row-2 padding-small">
             <h1 className="product-card__title text-medium">{product.title}</h1>
             <div>
-              <span className="product-card__price text-large">
+              <span className="product-card__price text-x-large">
                 {formatNumberToCurrency(product.price)}
               </span>
               <Button style="secondary">+</Button>
