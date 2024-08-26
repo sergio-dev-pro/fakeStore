@@ -35,7 +35,7 @@ export const Header = () => {
             className="dropdown__button dropdown__exit-button"
             onClick={exit}
           >
-            <Link href="/signin">Sair</Link>
+            <Link href="/">Sair</Link>
           </Button>
         ) : (
           <>
