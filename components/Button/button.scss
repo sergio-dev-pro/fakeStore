@@ -8,6 +8,7 @@
   border-radius: 3px;
   font-weight: 700;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 
 .button--primary {
@@ -27,4 +28,7 @@
   background-color: white;
   color: colors.$blue;
   border: 1.5px solid colors.$blue;
+}
+.button--width-full {
+  width: 100%;
 }
