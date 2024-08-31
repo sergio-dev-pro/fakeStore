@@ -1,6 +1,7 @@
 @use "@/styles/sizes";
 @use "@/styles/colors";
 @use "@/styles/breakpoints";
+@use "@/styles/typography";
 
 .button {
   background-color: white;
@@ -31,4 +32,17 @@
 }
 .button--width-full {
   width: 100%;
+}
+
+.button--large {
+  @extend .text-large;
+  @extend .padding-large;
+}
+.button--medium {
+  @extend .text-medium;
+  @extend .padding-medium;
+}
+.button--small {
+  @extend .text-small;
+  @extend .padding-small;
 }

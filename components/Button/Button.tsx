@@ -10,6 +10,7 @@ type Props = {
   children: ReactNode;
   style?: buttonStyles;
   widthFull?: boolean;
+  size?: 'small' | 'medium' | 'large';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
@@ -17,13 +18,14 @@ export const Button = ({
   className,
   style = "primary",
   widthFull,
+  size = "medium",
   ...props
 }: Props) => {
   return (
     <button
       className={`${className} ${
         "button--" + style
-      } button text-large padding-small ${widthFull && "button--width-full"}`}
+      } button button--${size} ${widthFull && "button--width-full"}`}
       {...props}
     >
       {children}
