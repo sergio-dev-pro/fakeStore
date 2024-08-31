@@ -7,10 +7,10 @@
   display: inline-block;
 }
 
-.dropdown__button {
-  padding-left: 16px;
-  padding-right: 16px;
-}
+// .dropdown__button {
+//   padding-left: 16px;
+//   padding-right: 16px;
+// }
 
 .dropdown__visible {
   position: absolute;
@@ -20,4 +20,9 @@
   z-index: 1;
   border-radius: 3px;
   width: 100%;
+  width: auto;
+}
+.dropdown__visible--align-left {
+  display: flex;
+  justify-content: flex-end;
 }

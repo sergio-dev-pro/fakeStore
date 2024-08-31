@@ -1,3 +1,4 @@
+'use client'
 import React, { ReactNode, useState } from "react";
 import { Button, buttonStyles } from "../Button";
 import "./dropdown.scss";
@@ -42,7 +43,7 @@ export const Dropdown = ({
       >
         {title}
       </Button>
-      {isVisible && <div className="dropdown__visible">{children}</div>}
+      {isVisible && <div className="dropdown__visible--align-left"><div className="dropdown__visible">{children}</div></div>}
     </div>
   );
 };
