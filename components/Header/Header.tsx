@@ -28,6 +28,7 @@ export const Header = () => {
         title={username ? username : "Minha conta"}
         buttonStyle={username && "secondary-blue"}
         buttonClassName="dropdown__my-account-button"
+        buttonSize="large"
       >
         {username ? (
           <Button

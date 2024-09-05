@@ -5,6 +5,8 @@ import Image from "next/image";
 import "./page.scss";
 import { Button } from "@/components/Button";
 import { formatNumberToCurrency } from "@/helpers/format";
+import { Dropdown } from "@/components/Dropdown";
+import { Link } from "@/components/Link";
 
 type Products = Product[];
 
@@ -12,7 +14,7 @@ export default async function Home() {
   const res = await api.get("products");
   const products: Products = await res.data;
   return (
-    <section>
+    <section className="products-wrapper">
       {products.map((product) => (
         <div className="product-card" key={product.id}>
           <div className="product-card__grid-row-1 padding-small">
@@ -27,7 +29,9 @@ export default async function Home() {
               <span className="product-card__price text-x-large">
                 {formatNumberToCurrency(product.price)}
               </span>
-              <Button style="secondary">+</Button>
+              <Dropdown title="+">
+                <Button style="secondary" className="product-card__plus-dropdown__first-button" widthFull><Link href={`/product/${product.id}`}>Detalhes</Link></Button>
+              </Dropdown>
             </div>
           </div>
         </div>

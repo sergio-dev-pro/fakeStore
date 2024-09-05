@@ -1,6 +1,6 @@
 'use client'
 import React, { ReactNode, useState } from "react";
-import { Button, buttonStyles } from "../Button";
+import { Button, buttonSize, buttonStyles } from "../Button";
 import "./dropdown.scss";
 
 type Props = {
@@ -8,6 +8,7 @@ type Props = {
   children: ReactNode;
   buttonStyle?: buttonStyles;
   buttonClassName?: string;
+  buttonSize?: buttonSize
 };
 
 export const Dropdown = ({
@@ -15,6 +16,7 @@ export const Dropdown = ({
   children,
   buttonStyle = "secondary",
   buttonClassName,
+  buttonSize = 'medium'
 }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -40,6 +42,7 @@ export const Dropdown = ({
         onMouseEnter={handleMouseEnter}
         className={buttonClassName + " dropdown__button"}
         style={buttonStyle}
+        size={buttonSize}
       >
         {title}
       </Button>

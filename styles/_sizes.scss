@@ -38,6 +38,42 @@ $base: calc((1vh + 1vw) / 2);
     padding: 2.2rem;
   }
 }
+.padding-x-large {
+  padding: 5.6rem;
+  @include breakpoints.min(medium) {
+    padding: 5.1rem;
+  }
+  @include breakpoints.min(large) {
+    padding: 4.8rem;
+  }
+}
+.margin-top-x-large {
+  margin-top: 5.6rem;
+  @include breakpoints.min(medium) {
+    margin-top: 5.1rem;
+  }
+  @include breakpoints.min(large) {
+    margin-top: 4.8rem;
+  }
+}
+.margin-bottom-large {
+  margin-bottom: 3rem;
+  @include breakpoints.min(medium) {
+    margin-bottom: 2.6rem;
+  }
+  @include breakpoints.min(large) {
+    margin-bottom: 2.2rem;
+  }
+}
+.margin-bottom-medium {
+  margin-bottom: 2.1rem;
+  @include breakpoints.min(medium) {
+    margin-bottom: 1.8rem;
+  }
+  @include breakpoints.min(large) {
+    margin-bottom: 1.4rem;
+  }
+}
 
 @function calcSizeOfVwPlusVhDividedByTwo($size) {
   $sizevh: $size * 1vh;

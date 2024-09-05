@@ -6,11 +6,12 @@ export type buttonStyles =
   | "secondary"
   | "secondary-blue"
   | "bluish-green-secondary";
+export type buttonSize = "small" | "medium" | "large";
 type Props = {
   children: ReactNode;
   style?: buttonStyles;
   widthFull?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: buttonSize;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
@@ -23,9 +24,9 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      className={`${className} ${
-        "button--" + style
-      } button button--${size} ${widthFull && "button--width-full"}`}
+      className={`${className} ${"button--" + style} button button--${size} ${
+        widthFull && "button--width-full"
+      }`}
       {...props}
     >
       {children}

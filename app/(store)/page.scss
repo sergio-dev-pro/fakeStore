@@ -2,8 +2,7 @@
 @use "@/styles/breakpoints";
 @use "@/styles/sizes";
 
-section {
-  padding: 2rem;
+.products-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -73,4 +72,7 @@ section {
 .product-card__price {
   grid-column: 1/ 2;
   color: #2c4c7f;
+}
+.product-card__plus-dropdown__first-button {
+  margin-bottom: 0.5rem;
 }
