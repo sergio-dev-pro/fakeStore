@@ -30,7 +30,7 @@ export default async function Home() {
                 {formatNumberToCurrency(product.price)}
               </span>
               <Dropdown title="+">
-                <Button style="secondary" className="product-card__plus-dropdown__first-button" widthFull><Link href={`/product/${product.id}`}>Detalhes</Link></Button>
+                <Button style="secondary" className="" widthFull><Link href={`/product/${product.id}`}>Detalhes</Link></Button>
               </Dropdown>
             </div>
           </div>
