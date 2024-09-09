@@ -2,7 +2,6 @@ import { api } from "@/lib/api/api";
 import { Product as ProductType } from "@/types/product";
 import Image from "next/image";
 import "./page.scss";
-import ProductPrice from "@/components/ProductPrice/ProductPrice";
 import { formatNumberToCurrency } from "@/helpers/format";
 
 export default async function Product({ params }: { params: { id: string } }) {
