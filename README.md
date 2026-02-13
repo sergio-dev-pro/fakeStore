@@ -1,7 +1,5 @@
 Este é um projeto Next.js inicializado com create-next-app.
 
-🚀 Nome do Projeto
-
 Aplicação web desenvolvida como projeto pessoal utilizando tecnologias modernas do ecossistema React, com foco em performance, escalabilidade, tipagem forte e qualidade de código.
 
 Este projeto foi criado para aplicar boas práticas de arquitetura front-end, testes unitários e organização de código em aplicações reais.
